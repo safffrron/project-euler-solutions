@@ -1,0 +1,44 @@
+// Answer - 4613732
+
+// code - 
+
+#include <bits/stdc++.h>
+#define ll long long
+#define endl '\n'
+using namespace std;
+
+const int mod = 1e9 +7;
+
+void solve()
+{
+    ll sum = 0;
+    int curr = 1, prev = 0, prev_prev = 0;
+    while( curr <= 4e6)
+    {
+        if(!(curr%2)) sum+=curr;
+        
+        prev_prev = prev;
+        prev = curr;
+        curr = prev + prev_prev;
+        
+        //cout<<curr;
+    }
+    cout<<sum;
+}
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    
+    //input test cases
+    int t = 1;
+    //cin>>t;
+    while(t--)
+    {
+        solve();
+    }
+    
+    return 0;
+}    
