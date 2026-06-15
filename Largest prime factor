@@ -1,0 +1,39 @@
+// Answer - 6857
+
+// code 
+
+#include <bits/stdc++.h>
+#define ll long long
+#define endl '\n'
+using namespace std;
+
+const int mod = 1e9 +7;
+
+
+void solve()
+{
+    ll maxx = 1, num = 600851475143;
+    for(int i=3; i*i<=num; i+=2)
+    {
+        if(num%i==0){ maxx=i; num/=i;}
+    }
+    if(num>1) maxx=num;
+    cout<<maxx;
+}
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    
+    //input test cases
+    int t=1;
+    //cin>>t;
+    while(t--)
+    {
+        solve();
+    }
+    
+    return 0;
+}    
