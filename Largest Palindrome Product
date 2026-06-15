@@ -1,0 +1,50 @@
+// Ans - 906609
+
+//code 
+
+#include <bits/stdc++.h>
+#define ll long long
+#define endl '\n'
+using namespace std;
+
+const int mod = 1e9 +7;
+
+bool isPalindrome(ll n)
+{
+    string s = to_string(n);
+    for(int i=0; i<s.size(); i++) if(s[i] != s[s.size()-i-1]) return false;
+    return true;
+}
+
+void solve()
+{
+    ll ans = 0;
+    for(ll i=999; i>=100; i--)
+    {
+        for(ll j=999; j>=i; j--)
+        {
+            if(isPalindrome(i*j))
+            {
+                ans = max(ans, i*j);
+            }
+        }
+    }
+    cout<<ans;
+}
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    
+    //input test cases
+    int t=1;
+    //cin>>t;
+    while(t--)
+    {
+        solve();
+    }
+    
+    return 0;
+}    
