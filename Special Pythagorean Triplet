@@ -1,0 +1,47 @@
+// Ans - 31875000
+
+// code 
+
+#include <bits/stdc++.h>
+#define ll long long
+#define endl '\n'
+using namespace std;
+
+const int mod = 1e9 +7;
+
+
+void solve()
+{
+    for(int a = 1; a<=998 ; a++ )
+    {
+        for(int b = 1; b<=998-a; b++)
+        {
+            int c = 1000 -a -b;
+            if( a*a + b*b == c*c )
+            {
+                //cout<< a<< " "<<b<<" "<<c<<" "<<endl;
+                cout<<a*b*c<<endl;
+                return;
+            }
+            if( a*a + b*b > c*c ) break;
+        }
+    }
+    cout<<1<<endl;
+}
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    
+    //input test cases
+    int t=1;
+    //cin>>t;
+    while(t--)
+    {
+        solve();
+    }
+    
+    return 0;
+}    
